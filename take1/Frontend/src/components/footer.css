@@ -1,0 +1,11 @@
+.footer{
+    height: 60px;
+    background-color: #000221;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer h1{
+    font-size: x-large;
+    color: white;
+}

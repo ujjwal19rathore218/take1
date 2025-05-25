@@ -1,0 +1,320 @@
+.dice-game-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.dice-inner-container {
+    margin-top: 40px;
+    height: 85%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 15px 11px #0b0829;
+
+}
+
+.dice-bet-option {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    background-color: #141142;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.dice-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #10122c;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+}
+
+.dice-game-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 80%;
+    justify-content: center;
+}
+
+.input-number-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.input-number{
+    color: white;
+}
+
+.slider-container{
+    width: 80%;
+    border: 13px solid #363d79;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    flex-direction: column;
+}
+.dice-pointer-container{
+    position: relative;
+    width: 100%;
+}
+.dice-pointer{
+    position: absolute;
+    top: -57px;
+    left: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    transition: 0.4s cubic-bezier(0.26, 0.4, 0.33, 1);
+}
+
+.dice-pointer span img{
+    height: 70px;
+    width: 70px;
+}
+.redtext{
+    color: red;
+}
+.greentext{
+    color: rgb(0, 223, 0);
+}
+.dice-num-info{
+    position: absolute;
+    z-index: 10;
+}
+.opacitytrue{
+    opacity: 1;
+}
+.opacityfalse{
+    opacity: 0;
+}
+.zindex{
+    z-index: -1;
+}
+
+.slider-info{
+    display: flex;
+    width: 95%;
+    background-color: #363d79;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: space-between;
+    
+}
+
+
+
+.slider-info label{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    gap: 5px;
+}
+
+.bet-form {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.bet-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bet-info span {
+    color: white;
+}
+
+.bet-input-cont {
+    background-color: #363d79;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 9px 0px #121538;
+}
+
+#bet-amount {
+    background-color: #212121;
+    width: 60%;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid #363d79;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: white;
+}
+
+#bet-amount:focus {
+    color: white;
+    background-color: #212121;
+    outline-color: #4c55a2;
+    transition: .1s;
+    transition-property: box-shadow;
+}
+
+.multiplyer {
+    height: 40px;
+    border: none;
+    outline: none;
+    width: 20%;
+    background-color: #363d79;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+}
+
+.multiplyer:hover {
+    background-color: #4c55a7;
+}
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9 51%, #4776E6 100%);
+    margin-top: 10px;
+    padding: 17px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-grad:active {
+    transform: scale(0.95);
+}
+ 
+.total-profit {
+    background-color: #212121;
+    width: 90%;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid #363d79;
+    border-radius: 5px;
+    color: white;
+}
+
+.margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 10px;
+    /* Specified height */
+    background: linear-gradient(to right, red, red) no-repeat, linear-gradient(to right, red, rgb(0, 223, 0));
+    /* Gray background */
+    outline: none;
+    /* Remove outline */
+    transition: opacity .2s;
+    /* Transition for the handle */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 35px;
+    /* Width of the handle */
+    height: 35px;
+    /* Height of the handle */
+    background: #4ac6ff;
+    /* Green handle */
+    cursor: grab;
+    border-radius: 5px;
+    /* Round handle */
+    transition: background-color .3s;
+    /* Smooth transition */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4ac6ff;
+    cursor: grab;
+    border-radius: 50%;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background-color: #3d9ecb;
+    /* Darker green on hover */
+}
+
+.slider::-moz-range-thumb:hover {
+    background-color: #3d9ecb;
+}
+
+.slider::-webkit-slider-thumb:active {
+    background-color: #6acefc;
+    cursor: grabbing;
+    /* Darkest green on active */
+}
+
+.slider::-moz-range-thumb:active {
+    background-color: #6acefc;
+    cursor: grabbing;
+}
+
+.reset{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#resetimg{
+    height: 25px;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.disablebtn{
+    background-image: linear-gradient(to right, #3559ae 0%, #603a9d 51%, #365aac 100%);
+    margin-top: 10px;
+    padding: 17px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(160, 160, 160);
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}

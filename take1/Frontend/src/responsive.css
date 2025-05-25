@@ -1,0 +1,186 @@
+@media screen and (max-width: 1400px) {
+    .welcome {
+        justify-content: space-around;
+        height: 35%;
+    }
+
+    .welcome h1 {
+        font-size: xxx-large;
+    }
+
+    .welcome h2 {
+        font-size: xx-large;
+    }
+
+    .games-container {
+        height: calc(100vh - 60px);
+    }
+
+    .mines-game-cont {
+        height: 55%;
+        width: 90%;
+        margin-top: 10%;
+    }
+
+    .mine-cont {
+        width: 70%;
+        height: 100%;
+    }
+
+    .mines-inner-cont {
+        width: 50vmin;
+        height: 50vmin;
+    }
+
+    .dice-inner-container {
+        margin-top: 40px;
+        height: 55%;
+        width: 90%;
+    }
+
+    .dice-container {
+        width: 70%;
+        height: 100%;
+    }
+
+    .dashboard-container {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .logo-home img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .welcome {
+        justify-content: space-around;
+        height: 38%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .welcome h1 {
+        font-size: xx-large;
+    }
+
+    .welcome h2 {
+        font-size: large;
+    }
+
+    .options img {
+        display: none;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .start-options {
+        margin: 0px;
+    }
+
+    .top-games-type img {
+        height: 170px;
+        border-radius: 20px;
+        margin: 20px;
+        transition: scale 0.3s ease;
+    }
+
+    .game-cont img {
+        height: 140px;
+        border-radius: 10px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .game-cont {
+        display: flex;
+        width: 90%;
+        background-color: #03002d;
+        box-shadow: 0px 0px 15px 13px #0f0c39;
+        align-items: center;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .games-container {
+        height: auto;
+    }
+
+    .game-description {
+        padding-right: 0px;
+    }
+
+    .game-description h3 {
+        display: none;
+    }
+
+    .game-description ul {
+        display: none;
+    }
+
+    .game-description p {
+        font-size: smaller;
+    }
+
+    .mines-game-cont {
+        height: 75%;
+        width: 90%;
+        margin-top: 10%;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 0px 0px 15px 11px #0b0829;
+    }
+
+    .mines-bet-option {
+        width: 100%;
+        border-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .mine-cont {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .mines-inner-cont {
+        width: 84vmin;
+        height: 84vmin;
+    }
+    .dice-inner-container {
+        margin-top: 10px;
+        height: 85%;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dice-bet-option {
+        width: 100%;
+        border-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .dice-container {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+    }
+    .slider-info {
+        width: 90%;
+    }
+    .slider-info-input{
+        width: 80%;
+    }
+    .dice-pointer span img {
+        height: 60px;
+        width: 60px;
+    }
+}
