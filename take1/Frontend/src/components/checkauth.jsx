@@ -8,19 +8,31 @@ const useCheckAuth = () => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
-    const getuser = async () => {
-      try {
-        const response = await axios.get(`${BACKEND_URL}/auth/login/success`, { withCredentials: true });
-        console.log("response", response);
-      } catch (error) {
+    const checkToken = async () => {
+      const token = localStorage.getItem("jwtToken");
+      if (!token) {
         navigate("/login");
-        console.log(BACKEND_URL);
+        setLoading(false);
+        return;
+      }
+      try {
+        // Example protected endpoint
+        await axios.get(`${BACKEND_URL}/api/balance`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        // If successful, user is authenticated
+      } catch (error) {
+        // Token invalid or expired
+        localStorage.removeItem("jwtToken");
+        navigate("/login");
       } finally {
         setLoading(false);
       }
     };
 
-    getuser();
+    checkToken();
   }, [navigate, BACKEND_URL]);
 
   return loading;
