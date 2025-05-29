@@ -10,34 +10,50 @@ const Dashboard = () => {
   const [userdata, setuserdata] = useState({});
   const navigate = useNavigate();
 
-  const getuser = async() => {
-    try {
-      const response = await axios.get(`${BACKEND_URL}/auth/login/success`, { withCredentials: true });
-      setuserdata(response.data.user);
-    } catch (error) {
-      navigate("/login");
-    }
-  }
-
+  // Extract token from URL and store in localStorage, then clean URL
   useEffect(() => {
-    getuser();
-  }, []);
-
-  useEffect(() => {
-    handleUrlParameters();
-  }, []);
-
-  // Function to extract URL parameters and store them in local storage
-  const handleUrlParameters = () => {
     const params = new URLSearchParams(window.location.search);
-    params.forEach((value, key) => {
-      localStorage.setItem(key, value);
-    });
-  };
+    const token = params.get('token');
+    if (token) {
+      localStorage.setItem('jwtToken', token);
+      // Remove token from URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
+  // Fetch user data using JWT
+  useEffect(() => {
+    const getuser = async () => {
+      const token = localStorage.getItem('jwtToken');
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+      try {
+        // Here we fetch user data from a JWT-protected endpoint
+        // Replace /api/balance with your own user info endpoint if needed
+        const response = await axios.get(`${BACKEND_URL}/api/balance`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        // Synthesize a "user" object for display purposes
+        setuserdata({
+          displayName: response.data.displayName || "User",
+          balance: response.data.balance,
+          ...response.data,
+        });
+      } catch (error) {
+        localStorage.removeItem('jwtToken');
+        navigate("/login");
+      }
+    };
+    getuser();
+  }, [navigate]);
 
   return (
     <div className='dashboard-container'>
-      <h1>{`Hello ${userdata.displayName}, Welcome to Take.com.`}</h1>
+      <h1>{`Hello ${userdata.displayName || ""}, Welcome to Take.com.`}</h1>
       <p>You Have Successfully Logged in to Take.com</p>
       <p>Click the below button to go to the home page</p>
       <Link to="/"><button className="blue-btn-style">Home</button></Link>
