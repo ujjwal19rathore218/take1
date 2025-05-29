@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: "http://ec2-3-110-27-13.ap-south-1.compute.amazonaws.com",
+  origin: process.env.FRONTEND_URL, // <-- FIXED
   methods: "GET, POST, PUT, DELETE",
   credentials: true
 }));
@@ -25,7 +25,7 @@ app.use(cors({
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false // <-- SAFER
 }));
 
 app.use(passport.initialize());
@@ -47,7 +47,7 @@ app.get('/api/balance', authenticateToken, async (req, res) => {
     res.json({ balance: user.balance });
   } catch (error) {
     console.error('Database Error:', error);
-    res.status(500).json({ message: 'Error accessing the database.' });
+    res.status(500).json({ message: 'Error accessing the database.'});
   }
 });
 
