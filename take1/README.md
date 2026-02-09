@@ -136,7 +136,7 @@ root/
 
 ---
 
-**Rohan Lohiya**  
+**Ujjwal Rathore**  
 IIIT Guwahati  
 
 ---
@@ -144,6 +144,7 @@ IIIT Guwahati
 ![start-here](https://github.com/user-attachments/assets/023b45c0-9f29-4f34-a9ea-dbcc65ef923e)
 ![Mines-Game](https://github.com/user-attachments/assets/6de6db7f-ec73-4464-a035-3d76b176764c)
 ![DiceRoll](https://github.com/user-attachments/assets/1ff6629f-6fbd-47f9-a630-f34fcd5b8e2b)
+
 
 
 
